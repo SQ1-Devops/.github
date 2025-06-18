@@ -2,10 +2,7 @@
 name: Code Scan
 
 on:
-  push:
-    branches: ["**"]
-  pull_request:
-    branches: ["**"]
+  workflow_call
 
 jobs:
   scan:
