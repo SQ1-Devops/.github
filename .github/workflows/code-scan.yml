@@ -12,6 +12,8 @@ jobs:
 
       - name: Secret Scan with Gitleaks
         uses: gitleaks/gitleaks-action@v2
+        env:
+          GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
        
       - name: Secret Scan with TruffleHog
         uses: trufflesecurity/trufflehog@main
