@@ -1,8 +1,7 @@
-# .github/workflows/code-scan.yml
 name: Code Scan
 
 on:
-  workflow_call
+  workflow_call:
 
 jobs:
   scan:
@@ -13,8 +12,6 @@ jobs:
 
       - name: Secret Scan with Gitleaks
         uses: gitleaks/gitleaks-action@v2
-        with:
-          config-path: .gitleaks.toml # Optional custom config
 
       - name: Vulnerability Scan with Trivy
         uses: aquasecurity/trivy-action@master
@@ -23,7 +20,7 @@ jobs:
           ignore-unfixed: true
           severity: HIGH,CRITICAL
 
-      - name: Code Quality with SonarCloud (Free for public repos)
+      - name: Code Quality with SonarCloud
         uses: SonarSource/sonarcloud-github-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
