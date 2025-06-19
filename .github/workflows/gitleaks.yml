@@ -23,9 +23,9 @@ jobs:
         if: steps.cache-gitleaks.outputs.cache-hit != 'true'
         run: |
           mkdir -p ~/.cache/gitleaks
-          curl -sSL https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks-linux-amd64 -o ~/.cache/gitleaks/gitleaks
+          curl -sSL https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks_$(uname -s)_$(uname -m).tar.gz -o gitleaks.tar.gz
+          tar -xzf gitleaks.tar.gz -C ~/.cache/gitleaks
           chmod +x ~/.cache/gitleaks/gitleaks
-
 
       - name: Add Gitleaks to PATH
         run: echo "$HOME/.cache/gitleaks" >> $GITHUB_PATH
