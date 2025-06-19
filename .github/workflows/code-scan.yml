@@ -34,6 +34,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=sq1-devops
+            -Dsonar.projectKey=SQ1-Devops_demo-repository
             -Dsonar.organization=SQ1-Devops
             -Dsonar.host.url=https://sonarcloud.io
