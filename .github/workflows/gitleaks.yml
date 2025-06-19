@@ -26,6 +26,7 @@ jobs:
           curl -sSL https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks-linux-amd64 -o ~/.cache/gitleaks/gitleaks
           chmod +x ~/.cache/gitleaks/gitleaks
 
+
       - name: Add Gitleaks to PATH
         run: echo "$HOME/.cache/gitleaks" >> $GITHUB_PATH
       - name: Run Gitleaks
